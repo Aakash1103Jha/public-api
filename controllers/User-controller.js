@@ -27,11 +27,13 @@ exports.addDetails = async (req, res) => {
 exports.editDetails = async (req, res) => {
 	console.log(req.body)
 	try {
-		// const updated = await User.findByIdAndUpdate(req.params.id, {
-		// 	$set,
-		// })
+		const updated = await User.findByIdAndUpdate(req.params.id, req.body, { upsert: false })
+		return res.status(200).json({
+			updated: req.body,
+			message: `Document with _id: ${req.params.id} was updated successfully!`,
+		})
 	} catch (error) {
-		return console.error({ error: error.message })
+		return res.status(500).json({ error: error.message })
 	}
 }
 
