@@ -24,14 +24,24 @@ exports.addDetails = async (req, res) => {
 	}
 }
 
-exports.editDetails = async (req, res) => {}
+exports.editDetails = async (req, res) => {
+	console.log(req.body)
+	try {
+		// const updated = await User.findByIdAndUpdate(req.params.id, {
+		// 	$set,
+		// })
+	} catch (error) {
+		return console.error({ error: error.message })
+	}
+}
 
 exports.deleteDetails = async (req, res) => {
-	const id = req.params.id
-	console.log(id)
 	try {
-		const deleted = await User.findOneAndDelete({ _id: id })
-		return res.status(200).json({ Deleted: deleted })
+		const deleted = await User.findByIdAndDelete(req.params.id)
+		return res.status(200).json({
+			doc: deleted,
+			message: `Document with _id: ${req.params.id} was deleted successfully!`,
+		})
 	} catch (error) {
 		res.status(500).json(error.message)
 	}
