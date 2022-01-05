@@ -8,6 +8,7 @@ exports.getDetails = async (req, res) => {
 		return res.status(500).json(error.message)
 	}
 }
+
 exports.addDetails = async (req, res) => {
 	if (!req.body) {
 		return res.status(404).json("Invalid or empty data")
@@ -22,14 +23,16 @@ exports.addDetails = async (req, res) => {
 		return res.status(500).json(error.message)
 	}
 }
-exports.editDetails = async (req, res) => {}
-exports.deleteDetails = async (req, res) => {}
 
-// name: req.body.name,
-// address: req.body.address,
-// gender: req.body.gender,
-// dob: req.body.dob,
-// city: req.body.city,
-// state: req.body.state,
-// country: req.body.country,
-// pincode: req.body.pincode,
+exports.editDetails = async (req, res) => {}
+
+exports.deleteDetails = async (req, res) => {
+	const id = req.params.id
+	console.log(id)
+	try {
+		const deleted = await User.findOneAndDelete({ _id: id })
+		return res.status(200).json({ Deleted: deleted })
+	} catch (error) {
+		res.status(500).json(error.message)
+	}
+}
