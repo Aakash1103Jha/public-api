@@ -1,0 +1,39 @@
+{
+	"name": "public-api",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"scripts": {
+		"start": "node /app/build/main-*.js",
+		"local": "node ./build/main-*.js",
+		"build": "CI=false && webpack --config webpack.config.js",
+		"dev": "nodemon server.js"
+	},
+	"keywords": [
+		"nodejs",
+		"express",
+		"mongodb",
+		"mongoose.",
+		"webpack"
+	],
+	"author": "Aakash Jha",
+	"license": "ISC",
+	"dependencies": {
+		"babel-polyfill": "^6.26.0",
+		"cors": "^2.8.5",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.2",
+		"mongoose": "^6.1.5",
+		"regenerator-runtime": "^0.13.9"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.16.0",
+		"@babel/preset-env": "^7.16.4",
+		"babel-loader": "^8.2.3",
+		"clean-webpack-plugin": "^4.0.0",
+		"nodemon": "^2.0.15",
+		"webpack": "^5.65.0",
+		"webpack-cli": "^4.9.1",
+		"webpack-node-externals": "^3.0.0"
+	}
+}
