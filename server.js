@@ -17,3 +17,10 @@ app.listen(PORT, () => console.info(`Server running on port ${PORT}`))
 const UserRoute = require("./routes/User-route")
 
 app.use("/users", UserRoute)
+
+app.use("/", async (req, res) => {
+	return res.send({
+		error: "Looks like this endpoint is either not active, or does not exist. If you need some specific endpoint for your project, get in touch with the owner of this project.",
+		github: "https://github.com/Aakash1103Jha/public-api",
+	})
+})
