@@ -3,6 +3,8 @@
 ### A project for anyone making an onboarding project in CRMNEXT
 
 [![NodeJS with Webpack](https://github.com/Aakash1103Jha/public-api/actions/workflows/node-webpack.yml/badge.svg?branch=master)](https://github.com/Aakash1103Jha/public-api/actions/workflows/node-webpack.yml)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Aakash1103Jha/public-api)
+![GitHub repo size](https://img.shields.io/github/repo-size/Aakash1103Jha/public-api)
 
 Feedback and questions are welcome - thedevdesigner@gmail.com.
 If you would like some endpoints to be added, specific to your own project, you can add it as an Issue - with elaborate description.
