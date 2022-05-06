@@ -15,13 +15,14 @@ This is a NodeJS + Express application, using MongoDB Atlas as a nosql database 
 
 ## Endpoints
 
-All requests will have the same baseUrl: `https://crmnext-public-api.herokuapp.com/users`. Sending a `GET` request to the `baseUrl` will return a JSON object containing `error` and a `github` link.
+All requests will have the same baseUrl: `https://crmnext-public-api.herokuapp.com/`. Sending a `GET` request to the `baseUrl` will return a JSON object containing `error` and a `github` link.
 
 ### Active Endpoints
 
 The following endpoints follow a schema with the following mandatory fields:
 
 ```javascript
+// User schema
 {
 	name: String
 	addres: String
@@ -32,7 +33,20 @@ The following endpoints follow a schema with the following mandatory fields:
 	country: String
 	pincode: String
 }
+
+// Employee schema
+{
+	name: String
+	linkedin: String
+	mobile: String
+	email: String
+	company: String
+	title: String
+	group: String
+}
 ```
+
+To access and use the `user` endpoints, add `/users/` after the base URL. For `employee` endpoints, add `/employees/`. Following listed endpoints are common for both `users` and `employees` otherwise.
 
 GET: `/get-details`
 
