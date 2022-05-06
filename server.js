@@ -15,8 +15,10 @@ const PORT = process.env.PORT || 4000
 app.listen(PORT, () => console.info(`Server running on port ${PORT}`))
 
 const UserRoute = require("./routes/User-route")
+const EmployeeRoute = require("./routes/Employee-route")
 
 app.use("/users", UserRoute)
+app.use("/employees", EmployeeRoute)
 
 app.use("/", async (req, res) => {
 	return res.send({
